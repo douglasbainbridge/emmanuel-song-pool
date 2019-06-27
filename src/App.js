@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch, Link } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory'
+import { createBrowserHistory as createHistory } from 'history'
 import './App.css';
 import contentful from './config/contentful'
 import processContentful from './config/processContentful'
 import PrePreach from './views/PrePreach'
 import PostPreach from './views/PostPreach'
-
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const history = createHistory()
@@ -60,29 +60,39 @@ class App extends Component {
 
     return (
       <Router history={history}>
-        <div className="container-fluid pt-3">
-          <button onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
-            {this.state.focusSongs ? 'Show All' : 'Show Focus List'}
-          </button>
-          <Link to='/'>Pre-preach</Link>
-          <Link to='/post-preach'>Post-preach</Link>
-          <Switch>
-            <Route exact path="/">
-              <PrePreach
-                songs={this.state.songs}
-                focusSongs={this.state.focusSongs}
-              />
-            </Route>
-            <Route exact path="/post-preach">
-              <PostPreach
-                songs={this.state.songs}
-                focusSongs={this.state.focusSongs}
-              />
-            </Route>
-          </Switch>
+        <Route path="/" render={({ location }) =>
+          <div className="container-fluid pt-3">
+            <button onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
+              {this.state.focusSongs ? 'Show All' : 'Show Focus List'}
+            </button>
+            <Link to='/'>Pre-preach</Link>
+            <Link to='/post-preach'>Post-preach</Link>
 
+            <TransitionGroup appear={true}>
+              <CSSTransition
+                key={location.pathname.split('/')[1]}
+                classNames="fadeRouter"
+                timeout={150}
+              >
+                <Switch location={location}>
+                  <Route exact path="/">
+                    <PrePreach
+                      songs={this.state.songs}
+                      focusSongs={this.state.focusSongs}
+                    />
+                  </Route>
+                  <Route exact path="/post-preach">
+                    <PostPreach
+                      songs={this.state.songs}
+                      focusSongs={this.state.focusSongs}
+                    />
+                  </Route>
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
 
-        </div>
+          </div>
+        } />
       </Router>
 
     )

@@ -33,3 +33,27 @@ h6{
     background-color: #5fb67f;
     color: black;
 }
+.fadeRouter-enter {
+    opacity: 0.01;
+  }
+  .fadeRouter-appear {
+    opacity: 0.01;
+  }
+  .fadeRouter-enter-active {
+    opacity: 1;
+    transition: opacity 150ms ease-out;
+    position: absolute;
+    width: 100%;
+    margin: auto;
+  }
+  .fadeRouter-appear-active {
+    opacity: 1;
+    transition: opacity 150ms ease-out;
+  }
+  .fadeRouter-exit-active {
+    opacity: 0.01;
+    transition: opacity 150ms ease-out;
+    position: absolute;
+    width: 100%;
+    margin: auto;
+  }
