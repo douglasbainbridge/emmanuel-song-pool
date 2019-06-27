@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import { Router, Route, Switch, Link } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
 import './App.css';
 import contentful from './config/contentful'
 import processContentful from './config/processContentful'
-import List from './List'
+import PrePreach from './views/PrePreach'
+import PostPreach from './views/PostPreach'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const filterSubCat = (songs, cat, subcat) => {
-  return songs.filter(s => s.flowCategories && s.flowCategories.includes(cat) && s.flowSubcategories && s.flowSubcategories.includes(subcat))
-}
+const history = createHistory()
 
 class App extends Component {
   constructor() {
@@ -16,7 +17,8 @@ class App extends Component {
     this.state = {
       loading: true,
       songs: [],
-      error: ''
+      error: '',
+      focusSongs: false
     }
   }
 
@@ -55,25 +57,33 @@ class App extends Component {
     }
 
 
-    const callToWorshipDeclaration = filterSubCat(this.state.songs, 'Call To Worship', 'Declaration & Praise')
-    const callToWorshipDraw = filterSubCat(this.state.songs, 'Call To Worship', 'Drawing Near')
-    const revelationAssurance = filterSubCat(this.state.songs, 'Revelation', 'Assurance in Christ')
+
     return (
-      <div className="container-fluid pt-5">
-        <div className="d-flex flex-row">
-          <div className="mx-3">
-            <h2>Call to Worship</h2>
-            <List title="Declaration and Praise" list={callToWorshipDeclaration} />
-            <List title="Drawing Near" list={callToWorshipDraw} />
-          </div>
-          <div>
-            <h2>Revelation</h2>
-            <List title="Assurance in Christ" list={revelationAssurance} />
-          </div>
+      <Router history={history}>
+        <div className="container-fluid pt-3">
+          <button onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
+            {this.state.focusSongs ? 'Show All' : 'Show Focus List'}
+          </button>
+          <Link to='/'>Pre-preach</Link>
+          <Link to='/post-preach'>Post-preach</Link>
+          <Switch>
+            <Route exact path="/">
+              <PrePreach
+                songs={this.state.songs}
+                focusSongs={this.state.focusSongs}
+              />
+            </Route>
+            <Route exact path="/post-preach">
+              <PostPreach
+                songs={this.state.songs}
+                focusSongs={this.state.focusSongs}
+              />
+            </Route>
+          </Switch>
+
+
         </div>
-
-      </div>
-
+      </Router>
 
     )
   }

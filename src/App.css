@@ -19,3 +19,17 @@ h6{
 .text-green{
     color: #5fb67f;
 }
+.song-btn{
+    outline: none;
+    border: none;
+    background-color: none;
+    text-align: left;
+    transition: background-color 0.2s, color 0.2s;
+}
+.song-btn:focus{
+    outline:none;
+}
+.song-btn:hover{
+    background-color: #5fb67f;
+    color: black;
+}
