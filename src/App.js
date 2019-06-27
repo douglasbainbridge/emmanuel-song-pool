@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import contentful from './config/contentful'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    this.state = {
+      contentLoading: true,
+      content: {},
+      error: ''
+    }
+  }
+
+  componentDidMount() {
+    contentful.getEntries({
+      content_type: 'song',
+      order: '-fields.date',
+    })
+      .then(content => {
+        this.setState({
+          content, contentLoading: false
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        this.setState({ contentLoading: false, error: 'There was an error' })
+      })
+  }
+
+  render() {
+    return (
+      <div>
+        app
+      </div>
+    )
+  }
 }
-
 export default App;
