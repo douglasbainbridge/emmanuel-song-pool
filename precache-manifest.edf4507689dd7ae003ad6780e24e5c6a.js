@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "97617602b06e8a4b08fada8d5ede0021",
+    "revision": "f8469ad8652d56b58d1c177fb7010164",
     "url": "/emmanuel-song-pool/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/emmanuel-song-pool/static/css/2.0624914a.chunk.css"
   },
   {
-    "revision": "5b60c6ce7c94c2302f8c",
-    "url": "/emmanuel-song-pool/static/css/main.7e86e227.chunk.css"
+    "revision": "c035e0e209a3d1044687",
+    "url": "/emmanuel-song-pool/static/css/main.73d74882.chunk.css"
   },
   {
     "revision": "f735ded65bbadf73fdbb",
     "url": "/emmanuel-song-pool/static/js/2.a825ad85.chunk.js"
   },
   {
-    "revision": "5b60c6ce7c94c2302f8c",
-    "url": "/emmanuel-song-pool/static/js/main.88a3c44e.chunk.js"
+    "revision": "c035e0e209a3d1044687",
+    "url": "/emmanuel-song-pool/static/js/main.21cc1e95.chunk.js"
   },
   {
     "revision": "a231624ed706ae1682ac",
