@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import contentful from './config/contentful'
 import processContentful from './config/processContentful'
-import Song from './Song'
+import List from './List'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   constructor() {
@@ -41,19 +43,25 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return <div>Loading</div>
+    }
+    if (this.state.error) {
+      return <div>{this.state.error}</div>
+    }
+
+
+    const callToWorshipDeclaration = this.state.songs.filter(s => s.flowCategories.includes('Call To Worship') && s.flowSubcategories.includes('Declaration & Praise'))
+    const callToWorshipDraw = this.state.songs.filter(s => s.flowCategories.includes('Call To Worship') && s.flowSubcategories.includes('Drawing Near'))
     return (
-      <div style={{
-        minHeight: '100vh',
-        minWidth: '100vw',
-        backgroundColor: this.state.contentLoading ? 'black' : 'white',
-        transition: 'background-color 0.5s ease-in'
-      }}>
-        {this.state.loading ? <div>Loading</div> : this.state.error ? <div>{this.state.error}</div> : (
-          <div>
-            {this.state.songs.map(s => <Song key={s.title + s.artist} song={s} />)}
-          </div>
-        )}
+      <div className="container">
+        <List list={this.state.songs} />
+        <h2>Call to Worship</h2>
+        <List title="Declaration and Praise" list={callToWorshipDeclaration} />
+        <List title="Drawing Near" list={callToWorshipDraw} />
       </div>
+
+
     )
   }
 }
