@@ -5,13 +5,12 @@ import FlipMove from 'react-flip-move';
 
 function List({ list, title }) {
     return (
-        <div className="mb-4">
+        <div className="mb-4" style={{ width: '300px' }}>
             <h3>{title}</h3>
             <FlipMove
-                staggerDelayBy={200}
+                staggerDelayBy={30}
                 staggerDurationBy={0}
                 duration={300}
-                delay={500}
                 appearAnimation={"elevator"}
                 enterAnimation={"elevator"}
             >

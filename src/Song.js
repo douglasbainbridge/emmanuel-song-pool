@@ -5,7 +5,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import classnames from 'classnames'
 
 const Small = ({ fullTitle, title, content }) => {
-    return <span className="mr-3" title={fullTitle}>{title}: <strong>{content}</strong></span>
+    return <span className="mr-2" title={fullTitle}>{title}: <strong>{content}</strong></span>
 }
 
 class Song extends Component {
@@ -22,13 +22,13 @@ class Song extends Component {
                 <div
                     onClick={() => { this.setState({ expanded: !this.state.expanded }) }}
                     style={{ cursor: 'pointer', }}
-                    className={classnames("p-1", { 'bg-green': focusList })}
+                    className={classnames("p-1", { 'text-green': focusList })}
                 >
-                    <h4 className="mb-0">{title}<span> - {artist}</span></h4>
-                    <div className="d-flex flex-row">
+                    <h4 className="mb-0 d-inline-block">{title}</h4><small>/{artist}</small>
+                    <span className="float-right">
                         {maleKey && <Small fullTitle="Suggested male key" title="M" content={maleKey} />}
                         {femaleKey && <Small fullTitle="Suggested female key" title="F" content={femaleKey} />}
-                    </div>
+                    </span>
                 </div>
                 <div
                     style={{
@@ -37,7 +37,7 @@ class Song extends Component {
                         transition: 'max-height 0.5s'
                     }}
                 >
-                    <div className="p-3" >
+                    <div className="p-1" >
                         <Icon icon="spotify" />
                         <div dangerouslySetInnerHTML={{ __html: documentToHtmlString(notes) }} />
                         <h5>Flow Themes:</h5>

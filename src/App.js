@@ -6,6 +6,10 @@ import List from './List'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const filterSubCat = (songs, cat, subcat) => {
+  return songs.filter(s => s.flowCategories && s.flowCategories.includes(cat) && s.flowSubcategories && s.flowSubcategories.includes(subcat))
+}
+
 class App extends Component {
   constructor() {
     super()
@@ -51,14 +55,23 @@ class App extends Component {
     }
 
 
-    const callToWorshipDeclaration = this.state.songs.filter(s => s.flowCategories.includes('Call To Worship') && s.flowSubcategories.includes('Declaration & Praise'))
-    const callToWorshipDraw = this.state.songs.filter(s => s.flowCategories.includes('Call To Worship') && s.flowSubcategories.includes('Drawing Near'))
+    const callToWorshipDeclaration = filterSubCat(this.state.songs, 'Call To Worship', 'Declaration & Praise')
+    const callToWorshipDraw = filterSubCat(this.state.songs, 'Call To Worship', 'Drawing Near')
+    const revelationAssurance = filterSubCat(this.state.songs, 'Revelation', 'Assurance in Christ')
     return (
-      <div className="container">
-        <List list={this.state.songs} />
-        <h2>Call to Worship</h2>
-        <List title="Declaration and Praise" list={callToWorshipDeclaration} />
-        <List title="Drawing Near" list={callToWorshipDraw} />
+      <div className="container-fluid pt-5">
+        <div className="d-flex flex-row">
+          <div className="mx-3">
+            <h2>Call to Worship</h2>
+            <List title="Declaration and Praise" list={callToWorshipDeclaration} />
+            <List title="Drawing Near" list={callToWorshipDraw} />
+          </div>
+          <div>
+            <h2>Revelation</h2>
+            <List title="Assurance in Christ" list={revelationAssurance} />
+          </div>
+        </div>
+
       </div>
 
 
