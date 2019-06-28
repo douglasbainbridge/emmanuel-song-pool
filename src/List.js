@@ -5,8 +5,15 @@ import FlipMove from 'react-flip-move';
 
 function List({ list, title }) {
     return (
-        <div className="mb-4" style={{ width: '300px' }}>
-            <h3>{title}</h3>
+        <div
+            style={{
+                backgroundColor: 'white',
+                boxShadow: '0px 0px 0px 2px',
+                padding: '20px 12px',
+                borderRadius: '12px'
+            }}
+            className="mb-4">
+
             <FlipMove
                 staggerDelayBy={30}
                 staggerDurationBy={0}
@@ -14,6 +21,7 @@ function List({ list, title }) {
                 appearAnimation={"elevator"}
                 enterAnimation={"elevator"}
             >
+                <h3 key={title}>{title}</h3>
                 {list.map(s => <Song key={s.title + s.artist} song={s} />)}
             </FlipMove>
         </div>

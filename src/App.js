@@ -63,11 +63,19 @@ class App extends Component {
       <Router history={history}>
         <Route path="/" render={({ location }) =>
           <div className="container-fluid pt-3">
+            <ul className="nav justify-content-center">
+              <li className="nav-item">
+                <Link className="nav-link" to={`${process.env.PUBLIC_URL}/`}>Pre-preach</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={`${process.env.PUBLIC_URL}/post-preach`}>Post-preach</Link>
+              </li>
+            </ul>
             <button onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
               {this.state.focusSongs ? 'Show All' : 'Show Focus List'}
             </button>
-            <Link to={`${process.env.PUBLIC_URL}/`}>Pre-preach</Link>
-            <Link to={`${process.env.PUBLIC_URL}/post-preach`}>Post-preach</Link>
+
+
 
             <TransitionGroup appear={true}>
               <CSSTransition

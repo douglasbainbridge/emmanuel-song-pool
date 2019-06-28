@@ -1,10 +1,11 @@
 import React from 'react'
 import Slider from "react-slick";
 
+
 export default (props) => {
     var settings = {
         dots: true,
-        arrows: false,
+        arrows: true,
         infinite: false,
         speed: 500,
         slidesToShow: 4,
@@ -19,7 +20,7 @@ export default (props) => {
                 }
             },
             {
-                breakpoint: 992,
+                breakpoint: 900,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -27,11 +28,11 @@ export default (props) => {
                 }
             },
             {
-                breakpoint: 540,
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots: false
+                    dots: true
                 }
             }
         ]
