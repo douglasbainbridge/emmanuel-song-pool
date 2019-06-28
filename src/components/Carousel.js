@@ -39,8 +39,10 @@ export default (props) => {
     };
 
     return (
-        <Slider {...settings}>
-            {props.children}
-        </Slider>
+        <div>
+            <Slider {...settings}>
+                {props.children}
+            </Slider>
+        </div>
     )
 }

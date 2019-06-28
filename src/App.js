@@ -51,18 +51,37 @@ class App extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div>Loading</div>
+      return <div
+        style={{
+          backgroundColor: 'black',
+          position: 'fixed',
+          top: '0',
+          left: '0',
+          right: '0',
+          bottom: '0'
+        }}
+      >Loading</div>
     }
     if (this.state.error) {
-      return <div>{this.state.error}</div>
+      return <div
+        style={{
+          backgroundColor: 'black',
+          position: 'fixed',
+          top: '0',
+          left: '0',
+          right: '0',
+          bottom: '0'
+        }}
+      >{this.state.error}</div>
     }
 
 
 
     return (
+
       <Router history={history}>
         <Route path="/" render={({ location }) =>
-          <div className="container-fluid pt-3">
+          <div style={{ backgroundColor: 'black' }}>
             <ul className="nav justify-content-center">
               <li className="nav-item">
                 <Link className="nav-link" to={`${process.env.PUBLIC_URL}/`}>Pre-preach</Link>
@@ -76,30 +95,30 @@ class App extends Component {
             </button>
 
 
-
-            <TransitionGroup appear={true}>
-              <CSSTransition
-                key={location.pathname.split('/')[1]}
-                classNames="fadeRouter"
-                timeout={150}
-              >
-                <Switch location={location}>
-                  <Route exact path={`${process.env.PUBLIC_URL}/`}>
-                    <PrePreach
-                      songs={this.state.songs}
-                      focusSongs={this.state.focusSongs}
-                    />
-                  </Route>
-                  <Route exact path={`${process.env.PUBLIC_URL}/post-preach`}>
-                    <PostPreach
-                      songs={this.state.songs}
-                      focusSongs={this.state.focusSongs}
-                    />
-                  </Route>
-                </Switch>
-              </CSSTransition>
-            </TransitionGroup>
-
+            <div className="container-fluid pt-3">
+              <TransitionGroup appear={true}>
+                <CSSTransition
+                  key={location.pathname.split('/')[1]}
+                  classNames="fadeRouter"
+                  timeout={150}
+                >
+                  <Switch location={location}>
+                    <Route exact path={`${process.env.PUBLIC_URL}/`}>
+                      <PrePreach
+                        songs={this.state.songs}
+                        focusSongs={this.state.focusSongs}
+                      />
+                    </Route>
+                    <Route exact path={`${process.env.PUBLIC_URL}/post-preach`}>
+                      <PostPreach
+                        songs={this.state.songs}
+                        focusSongs={this.state.focusSongs}
+                      />
+                    </Route>
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            </div>
           </div>
         } />
       </Router>

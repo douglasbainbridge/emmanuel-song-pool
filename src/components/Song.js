@@ -45,7 +45,7 @@ class Song extends Component {
                     onClick={() => { this.setState({ expanded: !this.state.expanded }) }}
                     className={classnames("song-btn", "w-100", { 'text-green': focusList })}
                 >
-                    <h4 className="mb-0 d-inline-block">{title}</h4><small>/{artist}</small>
+                    <h4 className="mb-0 d-inline-block">{title}</h4>
                     {newSong && <span className="badge bg-red text-white ml-2">New</span>}
                     <span className="float-right">
                         {bpm && <Small title="Suggested tempo"><Icon icon="tempo" />{" "}{bpm}</Small>}
@@ -62,6 +62,7 @@ class Song extends Component {
                     }}
                 >
                     <div className="py-3 px-2">
+                        <h5>Artist: <strong>{artist}</strong></h5>
                         <div className="d-flex flex-row flex-wrap">
                             {spotifyLink && <ButtonLink link={spotifyLink}>Listen on Spotify <Icon icon="spotify" /></ButtonLink>}
                             {chartsLink && <ButtonLink link={spotifyLink}>Download Chord Charts <Icon icon="charts" /></ButtonLink>}
