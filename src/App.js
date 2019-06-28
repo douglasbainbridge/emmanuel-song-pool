@@ -8,7 +8,8 @@ import PrePreach from './views/PrePreach'
 import PostPreach from './views/PostPreach'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const history = createHistory()
 
 class App extends Component {
@@ -75,13 +76,13 @@ class App extends Component {
                 timeout={150}
               >
                 <Switch location={location}>
-                  <Route exact path="/">
+                  <Route exact path={`${process.env.PUBLIC_URL}/`}>
                     <PrePreach
                       songs={this.state.songs}
                       focusSongs={this.state.focusSongs}
                     />
                   </Route>
-                  <Route exact path="/post-preach">
+                  <Route exact path={`${process.env.PUBLIC_URL}/post-preach`}>
                     <PostPreach
                       songs={this.state.songs}
                       focusSongs={this.state.focusSongs}
