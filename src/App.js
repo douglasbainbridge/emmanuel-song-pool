@@ -66,8 +66,8 @@ class App extends Component {
             <button onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
               {this.state.focusSongs ? 'Show All' : 'Show Focus List'}
             </button>
-            <Link to='/'>Pre-preach</Link>
-            <Link to='/post-preach'>Post-preach</Link>
+            <Link to={`${process.env.PUBLIC_URL}/`}>Pre-preach</Link>
+            <Link to={`${process.env.PUBLIC_URL}/post-preach`}>Post-preach</Link>
 
             <TransitionGroup appear={true}>
               <CSSTransition
