@@ -8,10 +8,10 @@ h3{
     font-size: 24px !important;
 }
 h4{
-    font-size: 15px !important;
+    font-size: 14px !important;
 }
 h5{
-    font-size: 14px !important;
+    font-size: 13px !important;
 }
 h6{
     font-size: 12px !important;
@@ -19,23 +19,44 @@ h6{
 .bg-green{
     background-color: #5fb67f;
 }
+.bg-grey{
+    background-color: #f7f7f7;
+}
+.bg-red{
+    background-color: #df7892;
+}
 .text-green{
     color: #5fb67f;
 }
 .song-btn{
     outline: none;
     border: none;
-    background-color: none;
     text-align: left;
     transition: background-color 0.2s, color 0.2s;
+    padding: 5px;
 }
 .song-btn:focus{
     outline:none;
 }
 .song-btn:hover{
-    background-color: #5fb67f;
+    box-shadow: inset 0px 0px 0px 4px #2886ae;
     color: black;
 }
+
+.btn-link:hover{
+text-decoration: none !important;
+color: white !important;
+}
+.btn-link{
+    background-color: #2886ae;
+    border-radius: 6px;
+    padding: 4px;
+    font-size: 80%;
+    color: black !important;
+}
+
+
+
 .fadeRouter-enter {
     opacity: 0.01;
   }

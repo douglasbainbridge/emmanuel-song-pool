@@ -1,8 +1,8 @@
 import React from 'react'
-import List from '../List'
+import List from '../components/List'
 import filterSongBySubCat from '../config/filterSongBySubCat'
-import Carousel from '../Carousel'
-import ListColumn from '../ListColumn';
+import Carousel from '../components/Carousel'
+import ListColumn from '../components/ListColumn';
 
 export default function PrePreach(props) {
     const callToWorshipDeclaration = filterSongBySubCat(props.songs, 'Call To Worship', 'Declaration & Praise', props.focusSongs)
