@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/emmanuel-song-pool/static/css/main.fbe7a08c.chunk.css",
-    "main.js": "/emmanuel-song-pool/static/js/main.9e8a3cda.chunk.js",
-    "main.js.map": "/emmanuel-song-pool/static/js/main.9e8a3cda.chunk.js.map",
+    "main.css": "/emmanuel-song-pool/static/css/main.ffa996a3.chunk.css",
+    "main.js": "/emmanuel-song-pool/static/js/main.e4bc1633.chunk.js",
+    "main.js.map": "/emmanuel-song-pool/static/js/main.e4bc1633.chunk.js.map",
     "runtime~main.js": "/emmanuel-song-pool/static/js/runtime~main.c59a8203.js",
     "runtime~main.js.map": "/emmanuel-song-pool/static/js/runtime~main.c59a8203.js.map",
     "static/css/2.eaa353ee.chunk.css": "/emmanuel-song-pool/static/css/2.eaa353ee.chunk.css",
-    "static/js/2.77483433.chunk.js": "/emmanuel-song-pool/static/js/2.77483433.chunk.js",
-    "static/js/2.77483433.chunk.js.map": "/emmanuel-song-pool/static/js/2.77483433.chunk.js.map",
+    "static/js/2.4e57c8ff.chunk.js": "/emmanuel-song-pool/static/js/2.4e57c8ff.chunk.js",
+    "static/js/2.4e57c8ff.chunk.js.map": "/emmanuel-song-pool/static/js/2.4e57c8ff.chunk.js.map",
     "index.html": "/emmanuel-song-pool/index.html",
-    "precache-manifest.9f1380834bd62f0e3ab85c40d15d4072.js": "/emmanuel-song-pool/precache-manifest.9f1380834bd62f0e3ab85c40d15d4072.js",
+    "precache-manifest.746475a88e31e28bebabd3b2bda90096.js": "/emmanuel-song-pool/precache-manifest.746475a88e31e28bebabd3b2bda90096.js",
     "service-worker.js": "/emmanuel-song-pool/service-worker.js",
     "static/css/2.eaa353ee.chunk.css.map": "/emmanuel-song-pool/static/css/2.eaa353ee.chunk.css.map",
-    "static/css/main.fbe7a08c.chunk.css.map": "/emmanuel-song-pool/static/css/main.fbe7a08c.chunk.css.map",
+    "static/css/main.ffa996a3.chunk.css.map": "/emmanuel-song-pool/static/css/main.ffa996a3.chunk.css.map",
     "static/media/slick-theme.css": "/emmanuel-song-pool/static/media/slick.f97e3bbf.svg"
   }
 }
