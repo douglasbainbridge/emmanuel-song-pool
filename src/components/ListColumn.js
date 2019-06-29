@@ -9,7 +9,15 @@ export default function ListColumn(props) {
             <h2
                 style={{ color: 'white' }}
             >{props.title}</h2>
-            {props.children}
+            <div
+                style={{
+                    overflowY: 'auto',
+                    height: 'calc(100vh - 200px)'
+                }}
+            >
+                {props.children}
+            </div>
+
         </div>
     )
 }

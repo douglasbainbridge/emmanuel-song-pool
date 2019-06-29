@@ -54,15 +54,7 @@ color: white !important;
     font-size: 80%;
     color: black !important;
 }
-.slick-dots{
-position: fixed !important;
-bottom:0px !important;
-left:0;
-right:0;
-height: 40px;
-background-color: #f7f7f7;
-z-index: 1;
-}
+
 
 
 .fadeRouter-enter {
