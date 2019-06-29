@@ -52,8 +52,7 @@ export default function PostPreach(props) {
                 <List title="Holiness of God" list={revelationHoliness} />
                 <List title="God in Suffering" list={revelationSuffering} />
             </ListColumn>
-            <ListColumn title="Preach">
-            </ListColumn>
+            <ListColumn type="preach" />
             <ListColumn title="Communion">
                 <List title="The Cross" list={communionCross} />
             </ListColumn>

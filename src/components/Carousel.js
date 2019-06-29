@@ -9,13 +9,14 @@ export default (props) => {
         infinite: false,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
+        variableWidth: true,
         responsive: [
             {
                 breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                     dots: true
                 }
             },

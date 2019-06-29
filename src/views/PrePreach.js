@@ -60,8 +60,7 @@ export default function PrePreach(props) {
                 <List title="Celebration" list={responseCelebration} />
                 <List title="Kingdom Come" list={responseKingdom} />
             </ListColumn>
-            <ListColumn title="Preach">
-            </ListColumn>
+            <ListColumn type="preach" />
             <ListColumn title="Communion">
                 <List title="The Cross" list={communionCross} />
             </ListColumn>

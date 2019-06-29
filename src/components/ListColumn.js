@@ -2,11 +2,23 @@ import React from 'react'
 
 
 export default function ListColumn(props) {
+    if (props.type === "preach") {
+        return (
+            <div style={{
+                borderRadius: '6px',
+                margin: '12px 12px',
+            }}>
+                <h2
+                    className="text-white d-inline"
+                >Preach</h2>
+            </div>
+        )
+    }
     return (
         <div style={{
             borderRadius: '6px',
             margin: '12px 12px',
-            maxWidth: '500px'
+            width: '275px'
         }}>
             <h2
                 className="text-white d-inline"
