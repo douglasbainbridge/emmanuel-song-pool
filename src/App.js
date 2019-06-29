@@ -10,6 +10,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import FullList from './views/FullList';
 const history = createHistory()
 
 class App extends Component {
@@ -90,7 +91,10 @@ class App extends Component {
                 <Link className="nav-link" to={`${process.env.PUBLIC_URL}/post-preach`}>Post-preach</Link>
               </li>
               <li className="nav-item">
-                <button onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
+                <Link className="nav-link" to={`${process.env.PUBLIC_URL}/list`}>List</Link>
+              </li>
+              <li className="nav-item">
+                <button className="action-btn" onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
                   {this.state.focusSongs ? 'Show All' : 'Show Focus List'}
                 </button>
               </li>
@@ -114,6 +118,12 @@ class App extends Component {
                     </Route>
                     <Route exact path={`${process.env.PUBLIC_URL}/post-preach`}>
                       <PostPreach
+                        songs={this.state.songs}
+                        focusSongs={this.state.focusSongs}
+                      />
+                    </Route>
+                    <Route exact path={`${process.env.PUBLIC_URL}/list`}>
+                      <FullList
                         songs={this.state.songs}
                         focusSongs={this.state.focusSongs}
                       />

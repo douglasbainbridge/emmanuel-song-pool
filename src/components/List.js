@@ -17,7 +17,6 @@ function List({ list, title }) {
             <FlipMove
                 staggerDelayBy={30}
                 staggerDurationBy={0}
-                duration={300}
                 appearAnimation={"elevator"}
                 enterAnimation={"elevator"}
             >

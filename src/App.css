@@ -43,6 +43,19 @@ h6{
     color: black;
 }
 
+
+.action-btn{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+    padding: .1rem 1rem;
+    margin: .4rem 1rem;
+}
+.action-btn:focus{
+    outline:none;
+}
+
 .btn-link:hover{
 text-decoration: none !important;
 color: white !important;

@@ -6,6 +6,7 @@ export default function ListColumn(props) {
         <div style={{
             borderRadius: '6px',
             margin: '12px 12px',
+            maxWidth: '500px'
         }}>
             <h2
                 className="text-white d-inline"
