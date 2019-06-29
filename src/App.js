@@ -95,7 +95,7 @@ class App extends Component {
             </button>
 
 
-            <div className="container-fluid pt-3">
+            <div className="container-fluid pt-3" style={{ zIndex: 0 }}>
               <TransitionGroup appear={true}>
                 <CSSTransition
                   key={location.pathname.split('/')[1]}

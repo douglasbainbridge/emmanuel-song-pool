@@ -5,7 +5,7 @@ import Slider from "react-slick";
 export default (props) => {
     var settings = {
         dots: true,
-        arrows: true,
+        arrows: false,//was causing overflow
         infinite: false,
         speed: 500,
         slidesToShow: 4,
