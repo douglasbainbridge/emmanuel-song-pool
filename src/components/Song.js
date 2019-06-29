@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import Icon from './Icon'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import classnames from 'classnames'
 
 
 const Small = ({ title, children }) => {
@@ -27,7 +26,6 @@ class Song extends Component {
             femaleKey,
             focusList,
             notes,
-            flowCategories,
             flowSubcategories,
             spotifyLink,
             newSong,
@@ -43,7 +41,7 @@ class Song extends Component {
             >
                 <button
                     onClick={() => { this.setState({ expanded: !this.state.expanded }) }}
-                    className={classnames("song-btn", "w-100", { 'text-green': focusList })}
+                    className="song-btn w-100"
                 >
                     <div style={{
                         width: '100%',
@@ -63,6 +61,7 @@ class Song extends Component {
                         <span style={{
                             marginLeft: 'auto'
                         }}>
+                            {focusList && <Small title="Focus List Song"><Icon icon="star" /></Small>}
                             {newSong && <span className="badge bg-red text-white mr-2">New</span>}
                             {bpm && <Small title="Suggested tempo"><Icon icon="tempo" />{" "}{bpm}</Small>}
                             {maleKey && <Small title="Suggested male key"><Icon icon="male" />{" "}{maleKey}</Small>}
@@ -85,10 +84,7 @@ class Song extends Component {
                             {chartsLink && <ButtonLink link={spotifyLink}>Download Chord Charts <Icon icon="charts" /></ButtonLink>}
                             {tracksLink && <ButtonLink link={spotifyLink}>Download Tracks <Icon icon="tracks" /></ButtonLink>}
                         </div>
-                        <h5 className="mb-0 mt-2">Flow Themes:</h5>
-                        <small>{flowCategories && flowCategories.join(', ')}</small>
-
-                        <h5 className="mb-0 mt-2">Flow Sub Themes:</h5>
+                        <h5 className="mb-0 mt-2">Themes:</h5>
                         <small>{flowSubcategories && flowSubcategories.join(', ')}</small>
 
                         {notes && (

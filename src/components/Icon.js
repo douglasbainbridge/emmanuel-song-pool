@@ -2,8 +2,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
-import { faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop } from '@fortawesome/free-solid-svg-icons'
-library.add(faSpotify, faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop)
+import { faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar } from '@fortawesome/free-solid-svg-icons'
+library.add(faSpotify, faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar)
 
 export default (props) => {
     if (props.icon === "spotify") {
@@ -95,6 +95,19 @@ export default (props) => {
                         iconName: "laptop"
                     }
                 }
+            />
+        )
+    }
+    if (props.icon === "star") {
+        return (
+            <FontAwesomeIcon
+                icon={
+                    {
+                        prefix: 'fas',
+                        iconName: "star"
+                    }
+                }
+                className="text-green"
             />
         )
     }

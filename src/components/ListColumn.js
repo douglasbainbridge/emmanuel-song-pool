@@ -8,8 +8,11 @@ export default function ListColumn(props) {
             margin: '12px 12px',
         }}>
             <h2
-                className="text-white"
+                className="text-white d-inline"
             >{props.title}</h2>
+            {props.or && <h2
+                className="text-white d-inline float-right"
+            >OR</h2>}
             <div
                 style={{
                     overflowY: 'auto',

@@ -22,6 +22,14 @@ export default function PrePreach(props) {
     const revelationSuffering = filterSongBySubCat(props.songs, 'Revelation', 'God in Suffering', props.focusSongs)
     const responseAdoration = filterSongBySubCat(props.songs, 'Response', 'Adoration', props.focusSongs)
 
+    const responseReverence = filterSongBySubCat(props.songs, 'Response', 'Reverence & Awe', props.focusSongs)
+    const responseSurrender = filterSongBySubCat(props.songs, 'Response', 'Surrender', props.focusSongs)
+    const responseDependence = filterSongBySubCat(props.songs, 'Response', 'Dependence', props.focusSongs)
+    const responseCelebration = filterSongBySubCat(props.songs, 'Response', 'Celebration', props.focusSongs)
+    const responseKingdom = filterSongBySubCat(props.songs, 'Response', 'Kingdom Come', props.focusSongs)
+    const communionCross = filterSongBySubCat(props.songs, 'Communion', 'The Cross', props.focusSongs)
+    const sendingMission = filterSongBySubCat(props.songs, 'Sending', 'Mission', props.focusSongs)
+
 
     return (
         <Carousel>
@@ -46,12 +54,19 @@ export default function PrePreach(props) {
             </ListColumn>
             <ListColumn title="Response">
                 <List title="Adoration" list={responseAdoration} />
+                <List title="Reverence" list={responseReverence} />
+                <List title="Surrender" list={responseSurrender} />
+                <List title="Dependence" list={responseDependence} />
+                <List title="Celebration" list={responseCelebration} />
+                <List title="Kingdom Come" list={responseKingdom} />
             </ListColumn>
             <ListColumn title="Preach">
             </ListColumn>
             <ListColumn title="Communion">
+                <List title="The Cross" list={communionCross} />
             </ListColumn>
-            <ListColumn title="Revelation/Response/Sending">
+            <ListColumn title="Sending">
+                <List title="Mission" list={sendingMission} />
             </ListColumn>
         </Carousel>
     )
