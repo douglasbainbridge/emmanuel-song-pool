@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FullList from './views/FullList';
+import SingleCheckButton from './components/SingleCheckButton';
 const history = createHistory()
 
 class App extends Component {
@@ -19,8 +20,10 @@ class App extends Component {
     this.state = {
       loading: true,
       songs: [],
+      filteredSongs: [],
       error: '',
-      focusSongs: false
+      filterFocus: false,
+      filterNew: false,
     }
   }
 
@@ -39,6 +42,7 @@ class App extends Component {
         } else {
           this.setState({
             songs: validatedContent,
+            filteredSongs: validatedContent,
             loading: false
           })
         }
@@ -48,6 +52,29 @@ class App extends Component {
         console.log(err)
         this.setState({ loading: false, error: 'There was an error' })
       })
+  }
+
+  runFilters() {
+    this.setState({
+      filteredSongs: this.state.songs.filter(s =>
+        (s.focusList || !this.state.filterFocus)
+        && (s.newSong || !this.state.filterNew)
+      )
+    })
+  }
+
+  runSort(by) {
+    this.setState({
+      songs: this.state.songs.sort((a, b) => {
+        if (a[by] < b[by]) {
+          return -1;
+        }
+        if (a[by] > b[by]) {
+          return 1;
+        }
+        return 0;
+      })
+    }, this.runFilters)
   }
 
   render() {
@@ -83,25 +110,46 @@ class App extends Component {
       <Router history={history}>
         <Route path="/" render={({ location }) =>
           <div style={{ backgroundColor: 'black' }}>
-            <ul className="nav justify-content-center">
-              <li className="nav-item">
-                <Link className="nav-link" to={`${process.env.PUBLIC_URL}/`}>Pre-preach</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={`${process.env.PUBLIC_URL}/post-preach`}>Post-preach</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={`${process.env.PUBLIC_URL}/list`}>List</Link>
-              </li>
-              <li className="nav-item">
-                <button className="action-btn" onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
-                  {this.state.focusSongs ? 'Show All' : 'Show Focus List'}
-                </button>
-              </li>
-            </ul>
-
-
-
+            <div className="d-flex flex-row"
+              style={{ overflowX: 'auto', minWidth: '100%' }}>
+              <Link className="nav-link" to={`${process.env.PUBLIC_URL}/`}>Pre-preach</Link>
+              <Link className="nav-link" to={`${process.env.PUBLIC_URL}/post-preach`}>Post-preach</Link>
+              <Link className="nav-link" to={`${process.env.PUBLIC_URL}/list`}>List</Link>
+            </div>
+            <div className="d-flex flex-row"
+              style={{ overflowX: 'auto', minWidth: '100%' }}>
+              <SingleCheckButton
+                value={this.state.filterFocus}
+                onChange={() => {
+                  this.setState({ filterFocus: !this.state.filterFocus }, this.runFilters)
+                }}
+              >
+                Focus List
+                  </SingleCheckButton>
+              <SingleCheckButton
+                value={this.state.filterNew}
+                onChange={() => {
+                  this.setState({ filterNew: !this.state.filterNew }, this.runFilters)
+                }}
+              >
+                New
+                  </SingleCheckButton>
+              <button
+                onClick={() => {
+                  this.runSort('title')
+                }}
+                className="action-btn">Sort by title</button>
+              <button
+                onClick={() => {
+                  this.runSort('maleKey')
+                }}
+                className="action-btn">Sort male key</button>
+              <button
+                onClick={() => {
+                  this.runSort('femaleKey')
+                }}
+                className="action-btn">Sort female key</button>
+            </div>
             <div className="container-fluid" style={{ zIndex: 0 }}>
               <TransitionGroup appear={true}>
                 <CSSTransition
@@ -112,20 +160,20 @@ class App extends Component {
                   <Switch location={location}>
                     <Route exact path={`${process.env.PUBLIC_URL}/`}>
                       <PrePreach
-                        songs={this.state.songs}
-                        focusSongs={this.state.focusSongs}
+                        songs={this.state.filteredSongs}
+
                       />
                     </Route>
                     <Route exact path={`${process.env.PUBLIC_URL}/post-preach`}>
                       <PostPreach
-                        songs={this.state.songs}
-                        focusSongs={this.state.focusSongs}
+                        songs={this.state.filteredSongs}
+
                       />
                     </Route>
                     <Route exact path={`${process.env.PUBLIC_URL}/list`}>
                       <FullList
-                        songs={this.state.songs}
-                        focusSongs={this.state.focusSongs}
+                        songs={this.state.filteredSongs}
+
                       />
                     </Route>
                   </Switch>

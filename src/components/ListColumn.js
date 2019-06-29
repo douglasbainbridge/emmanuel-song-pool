@@ -26,7 +26,7 @@ export default function ListColumn(props) {
             <div
                 style={{
                     overflowY: 'auto',
-                    height: 'calc(100vh - 110px)'
+                    height: 'calc(100vh - 135px)'
                 }}
             >
                 {props.children}

@@ -4,6 +4,7 @@ import Slider from "react-slick";
 
 export default (props) => {
     var settings = {
+        className: "slider variable-width",
         dots: true,
         arrows: false,//was causing overflow
         infinite: false,
@@ -40,7 +41,7 @@ export default (props) => {
     };
 
     return (
-        <div style={{ paddingTop: '12px' }}>
+        <div>
             <Slider {...settings}>
                 {props.children}
             </Slider>

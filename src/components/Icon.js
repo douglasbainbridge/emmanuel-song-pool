@@ -1,9 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import classnames from 'classnames'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons'
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
 import { faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar } from '@fortawesome/free-solid-svg-icons'
-library.add(faSpotify, faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar)
+library.add(faSpotify, faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar, faSquare, faCheckSquare)
 
 export default (props) => {
     if (props.icon === "spotify") {
@@ -108,6 +110,21 @@ export default (props) => {
                     }
                 }
                 className="text-green"
+            />
+        )
+    }
+    if (props.icon === "check box") {
+        return (
+            <FontAwesomeIcon
+                icon={
+                    {
+                        prefix: 'far',
+                        iconName: props.checked ? "check-square" : "square"
+                    }
+                }
+                className={classnames(
+                    { "text-green": props.checked },
+                )}
             />
         )
     }
