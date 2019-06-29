@@ -40,7 +40,7 @@ export default (props) => {
     };
 
     return (
-        <div>
+        <div style={{ paddingTop: '12px' }}>
             <Slider {...settings}>
                 {props.children}
             </Slider>

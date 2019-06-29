@@ -56,31 +56,36 @@ export default function PostPreach(props) {
             <ListColumn title="Communion">
                 <List title="The Cross" list={communionCross} />
             </ListColumn>
-            <ListColumn title="Revelation" or>
-                <List title="Name of Jesus" list={revelationName} />
-                <List title="Gospel Story" list={revelationStory} />
-                <List title="Sufficiency of Christ" list={revelationSufficiency} />
-                <List title="Adoption in Christ" list={revelationAdoption} />
-                <List title="Ascended Christ" list={revelationAscended} />
-                <List title="Assurance in Christ" list={revelationAssurance} />
-                <List title="Eternity" list={revelationEternity} />
-                <List title="Love of God" list={revelationLove} />
-                <List title="Goodness of God" list={revelationGoodness} />
-                <List title="Greatness of God" list={revelationGreatness} />
-                <List title="Faithfulness of God" list={revelationFaithfulness} />
-                <List title="Holiness of God" list={revelationHoliness} />
-                <List title="God in Suffering" list={revelationSuffering} />
-            </ListColumn>
-            <ListColumn title="Response">
-                <List title="Adoration" list={responseAdoration} />
-                <List title="Reverence" list={responseReverence} />
-                <List title="Surrender" list={responseSurrender} />
-                <List title="Dependence" list={responseDependence} />
-                <List title="Celebration" list={responseCelebration} />
-                <List title="Kingdom Come" list={responseKingdom} />
-            </ListColumn>
-
-
+            <div className="text-center ">
+                <h2 className="text-white d-inline" >
+                    Revelation or Response
+                </h2>
+                <div className="d-flex flex-row">
+                    <ListColumn>
+                        <List title="Name of Jesus" list={revelationName} />
+                        <List title="Gospel Story" list={revelationStory} />
+                        <List title="Sufficiency of Christ" list={revelationSufficiency} />
+                        <List title="Adoption in Christ" list={revelationAdoption} />
+                        <List title="Ascended Christ" list={revelationAscended} />
+                        <List title="Assurance in Christ" list={revelationAssurance} />
+                        <List title="Eternity" list={revelationEternity} />
+                        <List title="Love of God" list={revelationLove} />
+                        <List title="Goodness of God" list={revelationGoodness} />
+                        <List title="Greatness of God" list={revelationGreatness} />
+                        <List title="Faithfulness of God" list={revelationFaithfulness} />
+                        <List title="Holiness of God" list={revelationHoliness} />
+                        <List title="God in Suffering" list={revelationSuffering} />
+                    </ListColumn>
+                    <ListColumn>
+                        <List title="Adoration" list={responseAdoration} />
+                        <List title="Reverence" list={responseReverence} />
+                        <List title="Surrender" list={responseSurrender} />
+                        <List title="Dependence" list={responseDependence} />
+                        <List title="Celebration" list={responseCelebration} />
+                        <List title="Kingdom Come" list={responseKingdom} />
+                    </ListColumn>
+                </div>
+            </div>
             <ListColumn title="Sending">
                 <List title="Mission" list={sendingMission} />
             </ListColumn>
