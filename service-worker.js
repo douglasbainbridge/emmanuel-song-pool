@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/emmanuel-song-pool/precache-manifest.7eb19c9097dfb9c45e3ad12457c12d56.js"
+  "/emmanuel-song-pool/precache-manifest.5e9101c1a427fd18a620ba91932c1e49.js"
 );
 
 self.addEventListener('message', (event) => {
