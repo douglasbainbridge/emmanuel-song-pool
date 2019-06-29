@@ -45,14 +45,31 @@ class Song extends Component {
                     onClick={() => { this.setState({ expanded: !this.state.expanded }) }}
                     className={classnames("song-btn", "w-100", { 'text-green': focusList })}
                 >
-                    <h4 className="mb-0 d-inline-block">{title}</h4>
-                    {newSong && <span className="badge bg-red text-white ml-2">New</span>}
-                    <span className="float-right">
-                        {bpm && <Small title="Suggested tempo"><Icon icon="tempo" />{" "}{bpm}</Small>}
-                        {maleKey && <Small title="Suggested male key"><Icon icon="male" />{" "}{maleKey}</Small>}
-                        {femaleKey && <Small title="Suggested female key"><Icon icon="female" />{" "}{femaleKey}</Small>}
-                        <Icon icon="chevron" direction={this.state.expanded ? 'up' : 'down'} />
-                    </span>
+                    <div style={{
+                        width: '100%',
+                        display: 'flex',
+                        whiteSpace: 'nowrap'
+                    }}>
+                        <h4
+                            className="mb-0 d-inline-block"
+                            style={{
+                                textOverflow: 'ellipsis',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden'
+                            }}
+                        >
+                            {title}</h4>
+
+                        <span style={{
+                            marginLeft: 'auto'
+                        }}>
+                            {newSong && <span className="badge bg-red text-white mr-2">New</span>}
+                            {bpm && <Small title="Suggested tempo"><Icon icon="tempo" />{" "}{bpm}</Small>}
+                            {maleKey && <Small title="Suggested male key"><Icon icon="male" />{" "}{maleKey}</Small>}
+                            {femaleKey && <Small title="Suggested female key"><Icon icon="female" />{" "}{femaleKey}</Small>}
+                            <Icon icon="chevron" direction={this.state.expanded ? 'up' : 'down'} />
+                        </span>
+                    </div>
                 </button>
                 <div
                     style={{

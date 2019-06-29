@@ -89,13 +89,16 @@ class App extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to={`${process.env.PUBLIC_URL}/post-preach`}>Post-preach</Link>
               </li>
+              <li className="nav-item">
+                <button onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
+                  {this.state.focusSongs ? 'Show All' : 'Show Focus List'}
+                </button>
+              </li>
             </ul>
-            <button onClick={() => { this.setState({ focusSongs: !this.state.focusSongs }) }}>
-              {this.state.focusSongs ? 'Show All' : 'Show Focus List'}
-            </button>
 
 
-            <div className="container-fluid pt-3" style={{ zIndex: 0 }}>
+
+            <div className="container-fluid" style={{ zIndex: 0 }}>
               <TransitionGroup appear={true}>
                 <CSSTransition
                   key={location.pathname.split('/')[1]}

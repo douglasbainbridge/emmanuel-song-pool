@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function ListColumn(props) {
     return (
         <div style={{
@@ -7,17 +8,16 @@ export default function ListColumn(props) {
             margin: '12px 12px',
         }}>
             <h2
-                style={{ color: 'white' }}
+                className="text-white"
             >{props.title}</h2>
             <div
                 style={{
                     overflowY: 'auto',
-                    height: 'calc(100vh - 200px)'
+                    height: 'calc(100vh - 120px)'
                 }}
             >
                 {props.children}
             </div>
-
         </div>
     )
 }
