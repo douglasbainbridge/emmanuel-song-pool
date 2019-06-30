@@ -1,5 +1,6 @@
 body{
     font-size: 12px !important;
+    overflow: hidden;
 }
 h2{
    font-size: 36px !important; 
