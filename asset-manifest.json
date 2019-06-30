@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/emmanuel-song-pool/static/css/main.2aaab896.chunk.css",
+    "main.css": "/emmanuel-song-pool/static/css/main.cf138316.chunk.css",
     "main.js": "/emmanuel-song-pool/static/js/main.a7518349.chunk.js",
     "main.js.map": "/emmanuel-song-pool/static/js/main.a7518349.chunk.js.map",
     "runtime~main.js": "/emmanuel-song-pool/static/js/runtime~main.c59a8203.js",
@@ -9,10 +9,10 @@
     "static/js/2.e962e67e.chunk.js": "/emmanuel-song-pool/static/js/2.e962e67e.chunk.js",
     "static/js/2.e962e67e.chunk.js.map": "/emmanuel-song-pool/static/js/2.e962e67e.chunk.js.map",
     "index.html": "/emmanuel-song-pool/index.html",
-    "precache-manifest.65f9fb6fc21fb4ea5198a4056fff755c.js": "/emmanuel-song-pool/precache-manifest.65f9fb6fc21fb4ea5198a4056fff755c.js",
+    "precache-manifest.787dca04de0cfadccaf97355e097b403.js": "/emmanuel-song-pool/precache-manifest.787dca04de0cfadccaf97355e097b403.js",
     "service-worker.js": "/emmanuel-song-pool/service-worker.js",
     "static/css/2.ad688040.chunk.css.map": "/emmanuel-song-pool/static/css/2.ad688040.chunk.css.map",
-    "static/css/main.2aaab896.chunk.css.map": "/emmanuel-song-pool/static/css/main.2aaab896.chunk.css.map",
+    "static/css/main.cf138316.chunk.css.map": "/emmanuel-song-pool/static/css/main.cf138316.chunk.css.map",
     "static/media/slick-theme.css": "/emmanuel-song-pool/static/media/slick.f97e3bbf.svg"
   }
 }
