@@ -109,7 +109,7 @@ class App extends Component {
 
       <Router history={history}>
         <Route path="/" render={({ location }) =>
-          <div style={{ backgroundColor: 'black' }}>
+          <div style={{ backgroundColor: 'black', height: '100vh', overflow: 'hidden' }}>
             <div className="d-flex flex-row"
               style={{ overflowX: 'auto', minWidth: '100%' }}>
               <Link className="nav-link" to={`${process.env.PUBLIC_URL}/`}>Pre-preach</Link>
