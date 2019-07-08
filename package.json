@@ -29,7 +29,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://songpool.weareemmanuel.com",
+  "homepage": "https://douglasbainbridge.github.io",
   "eslintConfig": {
     "extends": "react-app"
   },
