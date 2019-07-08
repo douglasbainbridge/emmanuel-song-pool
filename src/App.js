@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FullList from './views/FullList';
 import SingleCheckButton from './components/SingleCheckButton';
+import Home from './views/Home';
 
 class App extends Component {
   constructor() {
@@ -79,7 +80,7 @@ class App extends Component {
     if (this.state.loading) {
       return <div
         style={{
-          backgroundColor: 'black',
+          backgroundColor: '#030304',
           position: 'fixed',
           top: '0',
           left: '0',
@@ -91,7 +92,7 @@ class App extends Component {
     if (this.state.error) {
       return <div
         style={{
-          backgroundColor: 'black',
+          backgroundColor: '#030304',
           position: 'fixed',
           top: '0',
           left: '0',
@@ -106,12 +107,11 @@ class App extends Component {
     return (
       <HashRouter basename={process.env.PUBLIC_URL}>
         <Route path="/" render={({ location }) =>
-          <div style={{ backgroundColor: 'black', height: '100vh', overflow: 'hidden' }}>
+          <div style={{ backgroundColor: '#030304', height: '100vh', overflow: 'hidden' }}>
             <div className="d-flex flex-row"
               style={{ overflowX: 'auto', minWidth: '100%' }}>
               <Link className="nav-link" to={`${process.env.PUBLIC_URL}/`}>Pre-preach</Link>
               <Link className="nav-link" to={`${process.env.PUBLIC_URL}/post-preach`}>Post-preach</Link>
-              <Link className="nav-link" to={`${process.env.PUBLIC_URL}/list`}>List</Link>
             </div>
             <div className="d-flex flex-row"
               style={{ overflowX: 'auto', minWidth: '100%' }}>
@@ -155,7 +155,8 @@ class App extends Component {
                   timeout={150}
                 >
                   <Switch location={location}>
-                    <Route exact path={`${process.env.PUBLIC_URL}/`}>
+                    <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} />
+                    <Route exact path={`${process.env.PUBLIC_URL}/pre-preach`}>
                       <PrePreach
                         songs={this.state.filteredSongs}
 

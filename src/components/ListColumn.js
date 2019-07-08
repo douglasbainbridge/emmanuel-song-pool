@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Icon from './Icon'
 
 export default function ListColumn(props) {
     if (props.type === "preach") {
@@ -11,6 +11,25 @@ export default function ListColumn(props) {
                 <h2
                     className="text-white d-inline"
                 >Preach</h2>
+                <div style={{
+                    minHeight: '40vh',
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                    color: 'white',
+                    fontSize: '16px'
+                }}>
+                    <div
+                        style={{
+                            flexDirection: 'row', alignItems: 'center', marginBottom: 16
+                        }}>
+                        <Icon color='white' icon="arrow" direction="left" />
+                        before the preach
+                    </div>
+                    <div style={{ justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'row', textAlign: 'right' }}>
+                        after the preach
+                        <Icon color='white' icon="arrow" direction="right" />
+                    </div>
+                </div>
             </div>
         )
     }

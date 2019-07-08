@@ -1,11 +1,10 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import classnames from 'classnames'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons'
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
-import { faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar } from '@fortawesome/free-solid-svg-icons'
-library.add(faSpotify, faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar, faSquare, faCheckSquare)
+import { faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+library.add(faSpotify, faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar, faSquare, faCheckSquare, faArrowLeft, faArrowRight)
 
 export default (props) => {
     if (props.icon === "spotify") {
@@ -109,7 +108,7 @@ export default (props) => {
                         iconName: "star"
                     }
                 }
-                className="text-green"
+                className="text-yellow"
             />
         )
     }
@@ -122,9 +121,19 @@ export default (props) => {
                         iconName: props.checked ? "check-square" : "square"
                     }
                 }
-                className={classnames(
-                    { "text-green": props.checked },
-                )}
+            />
+        )
+    }
+    if (props.icon === "arrow") {
+        return (
+            <FontAwesomeIcon
+                style={{ marginLeft: '6px', marginRight: '6px' }}
+                icon={
+                    {
+                        prefix: 'fas',
+                        iconName: props.direction === 'left' ? "arrow-left" : "arrow-right"
+                    }
+                }
             />
         )
     }

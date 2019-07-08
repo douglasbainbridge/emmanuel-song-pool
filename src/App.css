@@ -33,20 +33,30 @@ a{
 .text-green{
     color: #5fb67f;
 }
+.text-yellow{
+    color:#EDC331;
+}
 .song-btn{
     outline: none;
     border: none;
     text-align: left;
     transition: background-color 0.2s, color 0.2s;
     padding: 4px;
+    background: none;
 }
 .song-btn:focus{
     outline:none;
 }
 .song-btn:hover{
-    box-shadow: inset 0px 0px 0px 4px #2886ae;
     color: black;
 }
+.songContainer{
+    transition: box-shadow 0.2s;
+    padding: 2px 6px;
+}
+.songContainer:hover,.songContainer:active, .songContainer.active{
+    box-shadow: inset 0px 0px 0px 4px #df7892;
+} 
 
 
 .action-btn{
@@ -56,7 +66,8 @@ a{
     transition: background-color 0.2s, color 0.2s;
     padding: .1rem 0.5rem;
     margin: .4rem 0.5rem;
-    background-color: #2886ae;
+    color: #2886ae;
+    background: none;
     white-space: nowrap;
 }
 .action-btn:focus{
@@ -71,21 +82,29 @@ text-decoration: none !important;
 color: white !important;
 }
 .btn-link{
-    background-color: #2886ae;
-    border-radius: 6px;
+   color: #2886ae !important;
+   transition: color 0.2s;
     padding: 4px;
-    font-size: 80%;
-    color: black !important;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 16px;
 }
+
 .slick-dots{
 position: fixed !important;
 bottom:0px !important;
 left:0;
 right:0;
-background-color: #f7f7f7;
+/* background-color: #030304; */
 z-index: 1;
 }
-
+.slick-dots li.slick-active button:before{
+    color: #2886ae !important;
+}
+.slick-dots li button:before{
+    color: white !important;
+    opacity: 1!important;
+}
 
 .fadeRouter-enter {
     opacity: 0.01;

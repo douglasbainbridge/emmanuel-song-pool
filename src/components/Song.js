@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import Icon from './Icon'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-
+import classnames from 'classnames'
 
 const Small = ({ title, children }) => {
     return <span className="mr-2" title={title}><strong>{children}</strong></span>
@@ -34,10 +34,8 @@ class Song extends Component {
             tracksLink
         } = this.props.song
         return (
-            <div style={{
-                border: '1px solid rgb(100,100,100)',
-                marginBottom: '4px',
-            }}
+            <div
+                className={classnames("songContainer", { 'active': this.state.expanded })}
             >
                 <button
                     onClick={() => { this.setState({ expanded: !this.state.expanded }) }}
