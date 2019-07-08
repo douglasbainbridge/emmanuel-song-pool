@@ -1,25 +1,28 @@
 import React from 'react'
 import Slider from "react-slick";
 
+
 export default (props) => {
     var settings = {
+        className: "slider variable-width",
         dots: true,
-        arrows: false,
+        arrows: false,//was causing overflow
         infinite: false,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
+        variableWidth: true,
         responsive: [
             {
                 breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                     dots: true
                 }
             },
             {
-                breakpoint: 992,
+                breakpoint: 900,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -27,19 +30,21 @@ export default (props) => {
                 }
             },
             {
-                breakpoint: 540,
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots: false
+                    dots: true
                 }
             }
         ]
     };
 
     return (
-        <Slider {...settings}>
-            {props.children}
-        </Slider>
+        <div>
+            <Slider {...settings}>
+                {props.children}
+            </Slider>
+        </div>
     )
 }
