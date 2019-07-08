@@ -27,7 +27,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://douglasbainbridge.github.io/emmanuel-song-pool",
+  "homepage": "http://songpool.weareemmanuel.com",
   "eslintConfig": {
     "extends": "react-app"
   },
