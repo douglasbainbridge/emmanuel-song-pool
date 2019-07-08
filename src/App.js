@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch, Link } from 'react-router-dom';
-import { createBrowserHistory as createHistory } from 'history'
+import { HashRouter, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 import contentful from './config/contentful'
 import processContentful from './config/processContentful'
@@ -12,10 +11,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FullList from './views/FullList';
 import SingleCheckButton from './components/SingleCheckButton';
-
-const history = createHistory({
-  basename: process.env.PUBLIC_URL,
-});
 
 class App extends Component {
   constructor() {
@@ -109,8 +104,7 @@ class App extends Component {
 
 
     return (
-
-      <Router history={history}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Route path="/" render={({ location }) =>
           <div style={{ backgroundColor: 'black', height: '100vh', overflow: 'hidden' }}>
             <div className="d-flex flex-row"
@@ -185,7 +179,7 @@ class App extends Component {
             </div>
           </div>
         } />
-      </Router>
+      </HashRouter>
 
     )
   }
