@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/emmanuel-song-pool/static/css/main.f7cc39c1.chunk.css",
-    "main.js": "/emmanuel-song-pool/static/js/main.56bc2e49.chunk.js",
-    "main.js.map": "/emmanuel-song-pool/static/js/main.56bc2e49.chunk.js.map",
-    "runtime~main.js": "/emmanuel-song-pool/static/js/runtime~main.c59a8203.js",
-    "runtime~main.js.map": "/emmanuel-song-pool/static/js/runtime~main.c59a8203.js.map",
-    "static/css/2.ad688040.chunk.css": "/emmanuel-song-pool/static/css/2.ad688040.chunk.css",
-    "static/js/2.e962e67e.chunk.js": "/emmanuel-song-pool/static/js/2.e962e67e.chunk.js",
-    "static/js/2.e962e67e.chunk.js.map": "/emmanuel-song-pool/static/js/2.e962e67e.chunk.js.map",
-    "index.html": "/emmanuel-song-pool/index.html",
-    "precache-manifest.814eabd7512449634db7e5b66f5efa5d.js": "/emmanuel-song-pool/precache-manifest.814eabd7512449634db7e5b66f5efa5d.js",
-    "service-worker.js": "/emmanuel-song-pool/service-worker.js",
-    "static/css/2.ad688040.chunk.css.map": "/emmanuel-song-pool/static/css/2.ad688040.chunk.css.map",
-    "static/css/main.f7cc39c1.chunk.css.map": "/emmanuel-song-pool/static/css/main.f7cc39c1.chunk.css.map",
-    "static/media/slick-theme.css": "/emmanuel-song-pool/static/media/slick.f97e3bbf.svg"
+    "main.css": "/static/css/main.7a6b7bb2.chunk.css",
+    "main.js": "/static/js/main.2e680438.chunk.js",
+    "main.js.map": "/static/js/main.2e680438.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.b6b2d2da.chunk.css": "/static/css/2.b6b2d2da.chunk.css",
+    "static/js/2.e962e67e.chunk.js": "/static/js/2.e962e67e.chunk.js",
+    "static/js/2.e962e67e.chunk.js.map": "/static/js/2.e962e67e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9f0a4a857cc8a0550072ac3c0fe0d556.js": "/precache-manifest.9f0a4a857cc8a0550072ac3c0fe0d556.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.b6b2d2da.chunk.css.map": "/static/css/2.b6b2d2da.chunk.css.map",
+    "static/css/main.7a6b7bb2.chunk.css.map": "/static/css/main.7a6b7bb2.chunk.css.map",
+    "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg"
   }
 }
