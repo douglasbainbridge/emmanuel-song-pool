@@ -12,7 +12,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FullList from './views/FullList';
 import SingleCheckButton from './components/SingleCheckButton';
-const history = createHistory()
+
+const history = createHistory({
+  basename: process.env.PUBLIC_URL,
+});
 
 class App extends Component {
   constructor() {
