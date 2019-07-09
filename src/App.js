@@ -106,15 +106,13 @@ class App extends Component {
 
     return (
       <HashRouter basename={process.env.PUBLIC_URL}>
-        <Route path="/" render={({ location }) =>
-          <div style={{ backgroundColor: '#030304', height: '100vh', overflow: 'hidden' }}>
+        <Switch>
+          {/* dont show on home page */}
+          <Route exact path="/" />
+          <Route path="/">
             <div className="d-flex flex-row"
               style={{ overflowX: 'auto', minWidth: '100%' }}>
-              <Link className="nav-link" to={`${process.env.PUBLIC_URL}/`}>Pre-preach</Link>
-              <Link className="nav-link" to={`${process.env.PUBLIC_URL}/post-preach`}>Post-preach</Link>
-            </div>
-            <div className="d-flex flex-row"
-              style={{ overflowX: 'auto', minWidth: '100%' }}>
+              <Link to={`${process.env.PUBLIC_URL}/`}>BACK</Link>
               <SingleCheckButton
                 value={this.state.filterFocus}
                 onChange={() => {
@@ -147,6 +145,10 @@ class App extends Component {
                 }}
                 className="action-btn">Sort female key</button>
             </div>
+          </Route>
+        </Switch>
+        <Route path="/" render={({ location }) =>
+          <div style={{ backgroundColor: '#030304', height: '100vh', overflow: 'hidden' }}>
             <div className="container-fluid" style={{ zIndex: 0 }}>
               <TransitionGroup appear={true}>
                 <CSSTransition
