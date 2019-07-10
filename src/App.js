@@ -12,6 +12,8 @@ import "slick-carousel/slick/slick-theme.css";
 import FullList from './views/FullList';
 import SingleCheckButton from './components/SingleCheckButton';
 import Home from './views/Home';
+import Spinner from './img/Spinner.gif'
+import Icon from './components/Icon';
 
 class App extends Component {
   constructor() {
@@ -78,28 +80,32 @@ class App extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div
-        style={{
-          backgroundColor: '#030304',
-          position: 'fixed',
-          top: '0',
-          left: '0',
-          right: '0',
-          bottom: '0'
-        }}
-      >Loading</div>
+      return <div style={{
+        display: 'flex',
+        flex: '1',
+        height: '100vh',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#030304'
+      }}>
+        <img height="30px" width="30px" src={Spinner} alt="Loading..." />
+      </div>
     }
     if (this.state.error) {
       return <div
         style={{
-          backgroundColor: '#030304',
-          position: 'fixed',
-          top: '0',
-          left: '0',
-          right: '0',
-          bottom: '0'
+          display: 'flex',
+          flex: '1',
+          height: '100vh',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#030304'
         }}
-      >{this.state.error}</div>
+      >
+        <div style={{ color: 'white' }}>{this.state.error}</div>
+      </div>
     }
 
 
@@ -107,12 +113,12 @@ class App extends Component {
     return (
       <HashRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          {/* dont show on home page */}
           <Route exact path="/" />
           <Route path="/">
             <div className="d-flex flex-row"
-              style={{ overflowX: 'auto', minWidth: '100%' }}>
-              <Link to={`${process.env.PUBLIC_URL}/`}>BACK</Link>
+              style={{ overflowX: 'auto', minWidth: '100%', height: '54px' }}>
+              <Link className="action-btn mb-2 d-flex align-items-center"
+                to={`${process.env.PUBLIC_URL}/`}><Icon icon='arrow' direction='left' /> BACK</Link>
               <SingleCheckButton
                 value={this.state.filterFocus}
                 onChange={() => {
@@ -148,38 +154,38 @@ class App extends Component {
           </Route>
         </Switch>
         <Route path="/" render={({ location }) =>
-          <div style={{ backgroundColor: '#030304', height: '100vh', overflow: 'hidden' }}>
-            <div className="container-fluid" style={{ zIndex: 0 }}>
-              <TransitionGroup appear={true}>
-                <CSSTransition
-                  key={location.pathname.split('/')[1]}
-                  classNames="fadeRouter"
-                  timeout={150}
-                >
-                  <Switch location={location}>
-                    <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} />
-                    <Route exact path={`${process.env.PUBLIC_URL}/pre-preach`}>
-                      <PrePreach
-                        songs={this.state.filteredSongs}
+          <div style={{
+            zIndex: 0
+          }}>
+            <TransitionGroup appear={true}>
+              <CSSTransition
+                key={location.pathname.split('/')[1]}
+                classNames="fadeRouter"
+                timeout={150}
+              >
+                <Switch location={location}>
+                  <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} />
+                  <Route exact path={`${process.env.PUBLIC_URL}/pre-preach`}>
+                    <PrePreach
+                      songs={this.state.filteredSongs}
 
-                      />
-                    </Route>
-                    <Route exact path={`${process.env.PUBLIC_URL}/post-preach`}>
-                      <PostPreach
-                        songs={this.state.filteredSongs}
+                    />
+                  </Route>
+                  <Route exact path={`${process.env.PUBLIC_URL}/post-preach`}>
+                    <PostPreach
+                      songs={this.state.filteredSongs}
 
-                      />
-                    </Route>
-                    <Route exact path={`${process.env.PUBLIC_URL}/list`}>
-                      <FullList
-                        songs={this.state.filteredSongs}
+                    />
+                  </Route>
+                  <Route exact path={`${process.env.PUBLIC_URL}/list`}>
+                    <FullList
+                      songs={this.state.filteredSongs}
 
-                      />
-                    </Route>
-                  </Switch>
-                </CSSTransition>
-              </TransitionGroup>
-            </div>
+                    />
+                  </Route>
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
           </div>
         } />
       </HashRouter>
