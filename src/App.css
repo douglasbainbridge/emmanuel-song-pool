@@ -101,6 +101,7 @@ bottom:0px !important;
 left:0;
 right:0;
 z-index: 1;
+background-color: #030304;
 }
 .slick-dots li.slick-active button:before{
     color: #2886ae !important;
@@ -109,9 +110,6 @@ z-index: 1;
     color: white !important;
     opacity: 1!important;
 }
-/* .slick-track{
-    padding: 0px 25px;
-} */
 
 .fadeRouter-enter {
     opacity: 0.01;
