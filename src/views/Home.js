@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Contact from '../components/Contact'
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
                 <Link className="btn-link" to={`${process.env.PUBLIC_URL}/post-preach`}>mostly after the preach</Link>
                 <Link className="btn-link" to={`${process.env.PUBLIC_URL}/list`}>view full list</Link>
             </div>
+            <Contact />
         </div>
     )
 }

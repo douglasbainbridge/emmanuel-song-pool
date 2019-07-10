@@ -14,7 +14,7 @@ import SingleCheckButton from './components/SingleCheckButton';
 import Home from './views/Home';
 import Spinner from './img/Spinner.gif'
 import Icon from './components/Icon';
-import Contact from './components/Contact'
+
 
 class App extends Component {
   constructor() {
@@ -189,7 +189,6 @@ class App extends Component {
             </TransitionGroup>
           </div>
         } />
-        <Contact />
       </HashRouter>
 
     )
