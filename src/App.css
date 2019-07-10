@@ -65,7 +65,22 @@ h6{
 .songContainer:hover,.songContainer:active, .songContainer.active{
     box-shadow: inset 0px 0px 0px 4px #df7892;
 } 
-
+.contact-btn{
+    outline: none;
+    text-align: left;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 4px;
+    background: #EDC331;
+    border-radius: 32px;
+    padding: 0px 12px;
+    border-color: #EDC331;
+    border-width: 5px;
+    border-style: solid;
+    color: black !important;
+}
+.contact-btn:hover{
+    color:white!important;
+}
 
 .action-btn{
     outline: none;
