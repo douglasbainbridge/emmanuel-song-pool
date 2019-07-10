@@ -119,7 +119,7 @@ class App extends Component {
             <div className="d-flex flex-row"
               style={{ overflowX: 'auto', minWidth: '100%', height: '54px' }}>
               <Link className="action-btn mb-2 d-flex align-items-center"
-                to={`${process.env.PUBLIC_URL}/`}><Icon icon='arrow' direction='left' /> BACK</Link>
+                to={`${process.env.PUBLIC_URL}/`}><Icon icon='arrow' direction='left' /> Back</Link>
               <SingleCheckButton
                 value={this.state.filterFocus}
                 onChange={() => {
@@ -134,7 +134,7 @@ class App extends Component {
                   this.setState({ filterNew: !this.state.filterNew }, this.runFilters)
                 }}
               >
-                New
+                New Songs
                   </SingleCheckButton>
               <button
                 onClick={() => {
@@ -145,12 +145,12 @@ class App extends Component {
                 onClick={() => {
                   this.runSort('maleKey')
                 }}
-                className="action-btn">Sort male key</button>
+                className="action-btn">Sort by male key</button>
               <button
                 onClick={() => {
                   this.runSort('femaleKey')
                 }}
-                className="action-btn">Sort female key</button>
+                className="action-btn">Sort by female key</button>
             </div>
           </Route>
         </Switch>
