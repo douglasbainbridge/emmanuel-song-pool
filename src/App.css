@@ -81,6 +81,12 @@ h6{
 .contact-btn:hover{
     color:white!important;
 }
+.hoverBlue:hover{
+    color:#2886ae!important;
+}
+.hoverBlue{
+    color:#df7892!important;
+}
 
 .action-btn{
     outline: none;

@@ -7,9 +7,22 @@ import classnames from 'classnames'
 const Small = ({ title, children }) => {
     return <span className="mr-2" title={title}><strong>{children}</strong></span>
 }
-const ButtonLink = props => {
-    return <div className="mb-2 mr-2"><a className="btn-link" href={props.link}>{props.children}</a></div>
+
+const IconLink = (props) => {
+    if (!props.link) { return null }
+    return (
+        <a
+            style={{ margin: 8, display: 'block', textAlign: 'center' }}
+            href={props.link}
+            target="__blank"
+            className="hoverBlue"
+        >
+            <Icon style={{ fontSize: '30px' }} icon={props.icon} />
+            <small className="d-block" >{props.title}</small>
+        </a>
+    )
 }
+
 
 class Song extends Component {
     constructor() {
@@ -31,7 +44,9 @@ class Song extends Component {
             newSong,
             bpm,
             chartsLink,
-            tracksLink
+            tracksLink,
+            youtubeLink,
+            applemusicLink
         } = this.props.song
         return (
             <div
@@ -77,10 +92,32 @@ class Song extends Component {
                 >
                     <div className="py-3 px-2">
                         <h5>Artist: <strong>{artist}</strong></h5>
-                        <div className="d-flex flex-row flex-wrap">
-                            {spotifyLink && <ButtonLink link={spotifyLink}>Listen on Spotify <Icon icon="spotify" /></ButtonLink>}
-                            {chartsLink && <ButtonLink link={spotifyLink}>Download Chord Charts <Icon icon="charts" /></ButtonLink>}
-                            {tracksLink && <ButtonLink link={spotifyLink}>Download Tracks <Icon icon="tracks" /></ButtonLink>}
+                        <div className="d-flex flex-row flex-wrap justify-content-around">
+                            <IconLink
+                                title="YouTube"
+                                icon="youtube"
+                                link={youtubeLink}
+                            />
+                            <IconLink
+                                title="Spotify"
+                                icon="spotify"
+                                link={spotifyLink}
+                            />
+                            <IconLink
+                                title="Apple Music"
+                                icon="applemusic"
+                                link={applemusicLink}
+                            />
+                            <IconLink
+                                title="Tracks"
+                                icon="tracks"
+                                link={tracksLink}
+                            />
+                            <IconLink
+                                title="Chord Charts"
+                                icon="charts"
+                                link={chartsLink}
+                            />
                         </div>
                         <h5 className="mb-0 mt-2">Themes:</h5>
                         <small>{flowSubcategories && flowSubcategories.join(', ')}</small>

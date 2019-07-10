@@ -2,19 +2,53 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons'
-import { faSpotify } from '@fortawesome/free-brands-svg-icons'
+import { faSpotify, faYoutube, faApple } from '@fortawesome/free-brands-svg-icons'
 import { faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
-library.add(faSpotify, faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar, faSquare, faCheckSquare, faArrowLeft, faArrowRight)
+library.add(faSpotify, faChevronDown, faMale, faFemale, faDrum, faStickyNote, faLaptop, faStar, faSquare, faCheckSquare, faArrowLeft, faArrowRight, faYoutube, faApple)
 
 export default (props) => {
     if (props.icon === "spotify") {
         return (
             <span>
                 <FontAwesomeIcon
+                    color={props.color}
+                    style={props.style}
                     icon={
                         {
                             prefix: 'fab',
                             iconName: "spotify"
+                        }
+                    }
+                />
+            </span>
+        )
+    }
+    if (props.icon === "youtube") {
+        return (
+            <span>
+                <FontAwesomeIcon
+                    style={props.style}
+                    color={props.color}
+                    icon={
+                        {
+                            prefix: 'fab',
+                            iconName: "youtube"
+                        }
+                    }
+                />
+            </span>
+        )
+    }
+    if (props.icon === "applemusic") {
+        return (
+            <span>
+                <FontAwesomeIcon
+                    color={props.color}
+                    style={props.style}
+                    icon={
+                        {
+                            prefix: 'fab',
+                            iconName: "apple"
                         }
                     }
                 />
@@ -78,6 +112,7 @@ export default (props) => {
     if (props.icon === "charts") {
         return (
             <FontAwesomeIcon
+                style={props.style}
                 icon={
                     {
                         prefix: 'fas',
@@ -90,6 +125,7 @@ export default (props) => {
     if (props.icon === "tracks") {
         return (
             <FontAwesomeIcon
+                style={props.style}
                 icon={
                     {
                         prefix: 'fas',
