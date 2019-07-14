@@ -45,7 +45,8 @@ export default function ListColumn(props) {
             <div
                 style={{
                     overflowY: 'auto',
-                    height: 'calc(100vh - 128px)'
+                    height: 'calc(100vh - 128px)',
+                    paddingBottom: '32px'
                 }}
             >
                 {props.children}
