@@ -4,7 +4,7 @@ import ListColumn from '../components/ListColumn';
 
 const toCsv = (songs) => {
     if (!songs) { return null }
-    let rows = "\"Title\",\"Artist\",\"Focus List\",\"Male Key\",\"Female Key\",\"BPM\",\"Categories\",\"Youtube\",\"OnSong\",\"Chords\"\n"
+    let rows = "\"Title\",\"Artist\",\"Focus List\",\"Male Key\",\"Female Key\",\"BPM\",\"Categories\",\"Youtube\",\"OnSong\",\"Chords\"\n\""
     rows += songs.map(s => [s.title || '', s.artist || '', s.focusList === true ? 'Yes' : '', s.maleKey || '', s.femaleKey || '', s.bpm || '', s.flowSubcategories || '', s.youtubeLink || '', s.onSongLink || '', s.chordsLink || ''].join("\",\"")).join("\"\n\"")
     let csvContent = "data:text/csv;charset=utf-8," + rows;
     var encodedUri = encodeURI(csvContent);
