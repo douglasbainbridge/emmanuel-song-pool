@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import Icon from './Icon'
+import Modal from './Modal'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import classnames from 'classnames'
 
@@ -53,7 +54,7 @@ class Song extends Component {
                 className={classnames("songContainer", { 'active': this.state.expanded })}
             >
                 <button
-                    onClick={() => { this.setState({ expanded: !this.state.expanded }) }}
+                    onClick={() => { this.setState({ expanded: true }) }}
                     className="song-btn w-100"
                 >
                     <div style={{
@@ -79,19 +80,19 @@ class Song extends Component {
                             {bpm && <Small title="Suggested tempo"><Icon icon="tempo" />{" "}{bpm}</Small>}
                             {maleKey && <Small title="Suggested male key"><Icon icon="male" />{" "}{maleKey}</Small>}
                             {femaleKey && <Small title="Suggested female key"><Icon icon="female" />{" "}{femaleKey}</Small>}
-                            <Icon icon="chevron" direction={this.state.expanded ? 'up' : 'down'} />
                         </span>
                     </div>
                 </button>
-                <div
-                    style={{
-                        maxHeight: this.state.expanded ? '300px' : '0px',
-                        overflow: 'hidden',
-                        transition: 'max-height 0.5s'
-                    }}
+                <Modal
+                    isOpen={this.state.expanded}
+                    onRequestClose={() => { this.setState({ expanded: false }) }}
                 >
-                    <div className="py-3 px-2">
+                    <div>
+                        <h3><strong>{title}</strong></h3>
                         <h5>Artist: <strong>{artist}</strong></h5>
+                        {maleKey && <h5>Suggested male key: : <strong>{maleKey}</strong></h5>}
+                        {femaleKey && <h5>Suggested female key: : <strong>{femaleKey}</strong></h5>}
+                        {bpm && <h5>Suggested BPM: : <strong>{bpm}</strong></h5>}
                         <div className="d-flex flex-row flex-wrap justify-content-around">
                             <IconLink
                                 title="YouTube"
@@ -128,9 +129,8 @@ class Song extends Component {
                                 <div dangerouslySetInnerHTML={{ __html: documentToHtmlString(notes) }} />
                             </div>
                         )}
-
                     </div>
-                </div>
+                </Modal>
             </div>
         )
     }
