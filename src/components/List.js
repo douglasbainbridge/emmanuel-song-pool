@@ -18,7 +18,7 @@ function List({ list, title }) {
             className="mb-4">
 
             <FlipMove
-                staggerDelayBy={30}
+                staggerDelayBy={10}
                 staggerDurationBy={0}
                 appearAnimation={"elevator"}
                 enterAnimation={"elevator"}

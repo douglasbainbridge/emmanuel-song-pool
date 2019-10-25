@@ -14,6 +14,7 @@ import SingleCheckButton from './components/SingleCheckButton';
 import Home from './views/Home';
 import Spinner from './img/Spinner.gif'
 import Icon from './components/Icon';
+import Textbox from './components/Textbox'
 
 
 class App extends Component {
@@ -26,13 +27,19 @@ class App extends Component {
       error: '',
       filterFocus: false,
       filterNew: false,
+      searchString: ''
     }
+    this.searchTimeout = null
+    this.runFilters = this.runFilters.bind(this)
   }
+
+
 
   componentDidMount() {
     contentful.getEntries({
       content_type: 'song',
-      limit: 1000
+      limit: 1000,
+      order: 'fields.title'
     })
       .then(content => {
         const validatedContent = processContentful(content)
@@ -57,10 +64,23 @@ class App extends Component {
   }
 
   runFilters() {
+    const checkText = (string, search) => String(string).toLowerCase().indexOf(String(search).toLowerCase()) > -1
+    const splitText = this.state.searchString.toLowerCase().split(' ');
+
+
     this.setState({
       filteredSongs: this.state.songs.filter(s =>
         (s.focusList || !this.state.filterFocus)
         && (s.newSong || !this.state.filterNew)
+        && (
+          this.state.searchString.length < 3 ||
+          splitText.every(text =>
+            checkText(s.title, text)
+            || checkText(s.artist, text)
+            || checkText(s.flowCategories && s.flowCategories.join(), text)
+            || checkText(s.flowSubcategories && s.flowSubcategories.join(), text)
+          )
+        )
       )
     })
   }
@@ -77,6 +97,11 @@ class App extends Component {
         return 0;
       })
     }, this.runFilters)
+  }
+
+  queueSearch() {
+    clearTimeout(this.searchTimeout);
+    this.searchTimeout = setTimeout(this.runFilters, 1000)
   }
 
   render() {
@@ -116,7 +141,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" />
           <Route path="/">
-            <div className="d-flex flex-row"
+            <div className="d-flex flex-row align-items-center"
               style={{ overflowX: 'auto', minWidth: '100%', height: '54px' }}>
               <Link className="action-btn mb-2 d-flex align-items-center"
                 to={`${process.env.PUBLIC_URL}/`}><Icon icon='arrow' direction='left' /> Back</Link>
@@ -136,6 +161,7 @@ class App extends Component {
               >
                 New Songs
                   </SingleCheckButton>
+
               <button
                 onClick={() => {
                   this.runSort('title')
@@ -151,6 +177,17 @@ class App extends Component {
                   this.runSort('femaleKey')
                 }}
                 className="action-btn">Sort by female key</button>
+              <Textbox
+                value={this.state.searchString}
+                onChange={e => this.setState({ searchString: e.target.value },
+                  this.queueSearch
+                  //   () => {
+                  //   clearTimeout(this.searchTimeout);
+                  //   this.searchTimeout = setTimeout(this.runFilters, 1000)
+                  // }
+                )}
+                placeholder="search..."
+              />
             </div>
           </Route>
         </Switch>
