@@ -88,6 +88,8 @@ class App extends Component {
   runSort(by) {
     this.setState({
       songs: this.state.songs.sort((a, b) => {
+        if (!a[by]) return 1
+        if (!b[by]) return -1
         if (a[by] < b[by]) {
           return -1;
         }
@@ -152,7 +154,7 @@ class App extends Component {
                 }}
               >
                 Focus List
-                  </SingleCheckButton>
+              </SingleCheckButton>
               <SingleCheckButton
                 value={this.state.filterNew}
                 onChange={() => {
@@ -160,7 +162,7 @@ class App extends Component {
                 }}
               >
                 New Songs
-                  </SingleCheckButton>
+              </SingleCheckButton>
 
               <button
                 onClick={() => {

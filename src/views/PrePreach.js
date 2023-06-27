@@ -1,12 +1,14 @@
 import React from 'react'
 import List from '../components/List'
 import filterSongBySubCat from '../config/filterSongBySubCat'
+import filterSongBySubCatOnly from '../config/filterSongBySubCatOnly'
 import Carousel from '../components/Carousel'
 import ListColumn from '../components/ListColumn';
 
 export default function PrePreach(props) {
     const callToWorshipDeclaration = filterSongBySubCat(props.songs, 'Call To Worship', 'Declaration & Praise')
     const callToWorshipDraw = filterSongBySubCat(props.songs, 'Call To Worship', 'Drawing Near')
+    const kidsIn = filterSongBySubCatOnly(props.songs, 'Kids In')
     const revelationName = filterSongBySubCat(props.songs, 'Revelation', 'Name of Jesus')
     const revelationSufficiency = filterSongBySubCat(props.songs, 'Revelation', 'Sufficiency of Christ')
     const revelationStory = filterSongBySubCat(props.songs, 'Revelation', 'Gospel Story')
@@ -36,6 +38,7 @@ export default function PrePreach(props) {
             <ListColumn title="Call to Worship">
                 <List title="Declaration and Praise" list={callToWorshipDeclaration} />
                 <List title="Drawing Near" list={callToWorshipDraw} />
+                <List title="Kids In" list={kidsIn} />
             </ListColumn>
             <ListColumn title="Revelation">
                 <List title="Name of Jesus" list={revelationName} />
