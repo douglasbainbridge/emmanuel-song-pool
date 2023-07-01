@@ -1,37 +1,35 @@
 import React from 'react'
 import List from '../components/List'
-import filterSongBySubCat from '../config/filterSongBySubCat'
+// import filterSongBySubCat from '../config/filterSongBySubCat'
 import filterSongBySubCatOnly from '../config/filterSongBySubCatOnly'
 import Carousel from '../components/Carousel'
 import ListColumn from '../components/ListColumn';
 
 export default function PrePreach(props) {
-    const callToWorshipDeclaration = filterSongBySubCat(props.songs, 'Call To Worship', 'Declaration & Praise')
-    const callToWorshipDraw = filterSongBySubCat(props.songs, 'Call To Worship', 'Drawing Near')
+    const callToWorshipDeclaration = filterSongBySubCatOnly(props.songs, 'Declaration & Praise')
+    const callToWorshipDraw = filterSongBySubCatOnly(props.songs, 'Drawing Near')
     const kidsIn = filterSongBySubCatOnly(props.songs, 'Kids In')
-    const revelationName = filterSongBySubCat(props.songs, 'Revelation', 'Name of Jesus')
-    const revelationSufficiency = filterSongBySubCat(props.songs, 'Revelation', 'Sufficiency of Christ')
-    const revelationStory = filterSongBySubCat(props.songs, 'Revelation', 'Gospel Story')
-    const revelationAdoption = filterSongBySubCat(props.songs, 'Revelation', 'Adoption in Christ')
-    const revelationAscended = filterSongBySubCat(props.songs, 'Revelation', 'Ascended Christ')
-    const revelationAssurance = filterSongBySubCat(props.songs, 'Revelation', 'Assurance in Christ')
-    const revelationEternity = filterSongBySubCat(props.songs, 'Revelation', 'Eternity')
-    const revelationLove = filterSongBySubCat(props.songs, 'Revelation', 'Love of God')
-    const revelationGoodness = filterSongBySubCat(props.songs, 'Revelation', 'Goodness of God')
-    const revelationGreatness = filterSongBySubCat(props.songs, 'Revelation', 'Greatness of God')
-    const revelationFaithfulness = filterSongBySubCat(props.songs, 'Revelation', 'Faithfulness of God')
-    const revelationHoliness = filterSongBySubCat(props.songs, 'Revelation', 'Holiness of God')
-    const revelationSuffering = filterSongBySubCat(props.songs, 'Revelation', 'God in Suffering')
-    const responseAdoration = filterSongBySubCat(props.songs, 'Response', 'Adoration')
-
-    const responseReverence = filterSongBySubCat(props.songs, 'Response', 'Reverence & Awe')
-    const responseSurrender = filterSongBySubCat(props.songs, 'Response', 'Surrender')
-    const responseDependence = filterSongBySubCat(props.songs, 'Response', 'Dependence')
-    const responseCelebration = filterSongBySubCat(props.songs, 'Response', 'Celebration')
-    const responseKingdom = filterSongBySubCat(props.songs, 'Response', 'Kingdom Come')
-    const communionCross = filterSongBySubCat(props.songs, 'Communion', 'The Cross')
-    const sendingMission = filterSongBySubCat(props.songs, 'Sending', 'Mission')
-
+    const revelationName = filterSongBySubCatOnly(props.songs, 'Name of Jesus')
+    const revelationSufficiency = filterSongBySubCatOnly(props.songs, 'Sufficiency of Christ')
+    const revelationStory = filterSongBySubCatOnly(props.songs, 'Gospel Story')
+    const revelationAdoption = filterSongBySubCatOnly(props.songs, 'Adoption in Christ')
+    const revelationAscended = filterSongBySubCatOnly(props.songs, 'Ascended Christ')
+    const revelationAssurance = filterSongBySubCatOnly(props.songs, 'Assurance in Christ')
+    const revelationEternity = filterSongBySubCatOnly(props.songs, 'Eternity')
+    const revelationLove = filterSongBySubCatOnly(props.songs, 'Love of God')
+    const revelationGoodness = filterSongBySubCatOnly(props.songs, 'Goodness of God')
+    const revelationGreatness = filterSongBySubCatOnly(props.songs, 'Greatness of God')
+    const revelationFaithfulness = filterSongBySubCatOnly(props.songs, 'Faithfulness of God')
+    const revelationHoliness = filterSongBySubCatOnly(props.songs, 'Holiness of God')
+    const revelationSuffering = filterSongBySubCatOnly(props.songs, 'God in Suffering')
+    const responseAdoration = filterSongBySubCatOnly(props.songs, 'Adoration')
+    const responseReverence = filterSongBySubCatOnly(props.songs, 'Reverence & Awe')
+    const responseSurrender = filterSongBySubCatOnly(props.songs, 'Surrender')
+    const responseDependence = filterSongBySubCatOnly(props.songs, 'Dependence')
+    const responseCelebration = filterSongBySubCatOnly(props.songs, 'Celebration')
+    const responseKingdom = filterSongBySubCatOnly(props.songs, 'Kingdom Come')
+    const communionCross = filterSongBySubCatOnly(props.songs, 'The Cross')
+    const sendingMission = filterSongBySubCatOnly(props.songs, 'Mission')
 
     return (
         <Carousel>
